@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+body {
+  font-family: "Indie Flower", cursive;
+  background-color: rgb(41, 39, 39);
+}
+h1 {
+  color: aqua;
+  padding-bottom: 20px;
+}
+.container {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background-color: aquamarine;
+  border-radius: 50%;
+}
+.container-horloge {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: url(/img/logo\ 33.png) no-repeat center;
+  background-size: cover;
+}
+.container-horloge::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  width: 20px;
+  height: 20px;
+  background-color: rgb(8, 34, 10);
+  border-radius: 50%;
+  border: 2px solid beige;
+  z-index: 111;
+}
+.hour{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  position: absolute;
+  background-color: rgb(42, 63, 182);
+  width: 4px;
+  height: 110px;
+  transform-origin: top;
+  animation: rotation-hour linear 6s infinite;
+  z-index: 2;
+}
+.minute{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  position: absolute;
+  background-color: rgb(121, 44, 44);
+  transform-origin: top;
+  width: 7px;
+  height: 90px;
+  animation: rotation-hour linear 6s infinite;
+  z-index: 1;
+}
+
+@keyframes rotation-hour {
+  0%{
+    transform: rotateZ(0deg);
+    
+  }
+  100%{
+    transform: rotateZ(360deg);
+
+  }
+}
